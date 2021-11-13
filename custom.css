@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+/* Erase the circle before the list */
+ul {
+  list-style:none;
+}
+
+/* style of the link button */
+.square_btn{
+    position: relative;
+    display: inline-block;
+    font-size: 1.5em;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.25em 0.5em;
+    color: #00a5e7;
+    background: #ECECEC;
+    transition: .4s;
+  }
+
+.square_btn:hover {
+    background: #00a5e7;
+    color: white;
+}
+
+/* Wrap buttons when the screen is narrow */
+
+ul {
+  display: flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+}
+
+/* shrink image when the screen is narrow */
+img {
+     max-width: 100%;
+}
+
+/* indent for class="indentback" */
+p.indentback{
+  text-indent: -1em;
+  padding-left: 2em;
+}
