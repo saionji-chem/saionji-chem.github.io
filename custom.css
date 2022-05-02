@@ -13,13 +13,13 @@ ul {
     text-decoration: none;
     font-weight: bold;
     padding: 0.25em 0.5em;
-    color: #00a5e7;
+    color: black;
     background: #ECECEC;
     transition: .4s;
   }
 
 .square_btn:hover {
-    background: #00a5e7;
+    background: black;
     color: white;
 }
 
