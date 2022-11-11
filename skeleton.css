@@ -129,7 +129,8 @@ p {
   margin-top: 0; }
 
 .docs-section{
-  float: left; }
+  float: left; 
+  width: 64%}
 
 /* Links */
 a {
