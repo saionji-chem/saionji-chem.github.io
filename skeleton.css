@@ -128,21 +128,6 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
 p {
   margin-top: 0; }
 
-.docs-section#top{
-  float: left; 
-  width: 64%;}
-
-.docs-section#self{
-  float: left; 
-  width: 64%;}
-
-.docs-section#map{
-  float: left; 
-  width: 64%;}
-
-.docs-section{ 
-  width: 88%;}
-
 /* Links */
 a {
   color: #333C5E; }
