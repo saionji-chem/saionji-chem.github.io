@@ -134,6 +134,21 @@ a {
 a:hover {
   color: #0FA0CE; }
 
+@media (min-width: 550px) {
+.docs-section#top{
+  float: left; 
+  width: 64%;}
+
+.docs-section#self{
+  float: left; 
+  width: 64%;}
+
+.docs-section#map{
+  float: left; 
+  width: 64%;}
+
+.docs-section{ 
+  width: 88%;}}
 
 /* Buttons */
 .button,
