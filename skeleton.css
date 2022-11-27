@@ -148,6 +148,7 @@ a:hover {
   width: 64%;}
 
 .docs-section{ 
+  float: left;
   width: 88%;}}
 
 /* Buttons */
