@@ -865,3 +865,20 @@ display: inline-block;
 	overflow: hidden;
 	white-space: nowrap;
 }
+
+jQuery(function($) {
+	var $commentBox = $("p");
+	var $remove = $("#toggleBtn");
+	var txt1 = "本文を読む";
+	var txt2 = "本文を隠す";
+	$commentBox.addClass("addTextOverFlow");
+	$remove.click(function(){
+		$commentBox.toggleClass("addTextOverFlow");
+		if(!$commentBox.hasClass("addTextOverFlow")){
+			$remove.html('' +txt2+ '');
+		} else {
+			$remove.html('' +txt1+ '');
+		}
+	return false;
+	});
+});
