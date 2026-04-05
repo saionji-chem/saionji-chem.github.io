@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>お問い合わせ - 西園寺聖樹</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <a href="index.html" class="nav-brand" style="text-decoration: none; color: var(--foreground);">西園寺聖樹</a>
+      <div class="nav-links">
+        <a href="index.html#profile">プロフィール</a>
+        <a href="index.html#achievements">実績</a>
+        <a href="index.html#testimonials">推薦の声</a>
+        <a href="index.html#articles">記事</a>
+        <a href="resources.html">教材</a>
+        <a href="links.html">リンク</a>
+        <a href="contact.html">お問い合わせ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" style="margin-top: 64px; min-height: auto; padding: 3rem 0;">
+    <div class="container">
+      <h1 style="margin-bottom: 0.5rem;">お問い合わせ</h1>
+      <p style="font-size: 1.125rem; color: var(--muted-foreground);">ご質問やご相談がございましたら、お気軽にご連絡ください</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="bg-white">
+    <div class="container" style="max-width: 700px;">
+      <div class="card">
+        <h2 style="margin-bottom: 1.5rem;">お問い合わせフォーム</h2>
+        
+        <form id="contactForm" onsubmit="handleFormSubmit(event)">
+          <!-- Category Selection -->
+          <div class="form-group">
+            <label for="category">お問い合わせ内容 <span style="color: #EF4444;">*</span></label>
+            <select id="category" name="category" required>
+              <option value="">選択してください</option>
+              <optgroup label="生徒様">
+                <option value="student_class">生徒様：個別授業希望</option>
+                <option value="student_consultation">生徒様：学習相談・受験相談</option>
+                <option value="student_material">生徒様：教材について</option>
+              </optgroup>
+              <optgroup label="法人様">
+                <option value="business_lecture">塾・出版社など法人様：授業・講演の依頼</option>
+                <option value="business_content">塾・出版社など法人様：書籍・教材・学習コンテンツ作成の依頼</option>
+                <option value="business_problem">塾・出版社など法人様：作問・校正・校閲の依頼</option>
+              </optgroup>
+              <option value="other">その他</option>
+            </select>
+          </div>
+
+          <!-- Name -->
+          <div class="form-group">
+            <label for="name">お名前 <span style="color: #EF4444;">*</span></label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">メールアドレス <span style="color: #EF4444;">*</span></label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <!-- Phone (Optional) -->
+          <div class="form-group">
+            <label for="phone">電話番号</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+
+          <!-- Message -->
+          <div class="form-group">
+            <label for="message">メッセージ <span style="color: #EF4444;">*</span></label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            送信する
+          </button>
+        </form>
+
+        <p style="font-size: 0.875rem; color: var(--muted-foreground); margin-top: 1rem; text-align: center;">
+          <span style="color: #EF4444;">*</span>は必須項目です
+        </p>
+      </div>
+
+      <!-- Alternative Contact Methods -->
+      <div style="margin-top: 3rem; padding: 2rem; background-color: var(--muted); border-radius: 0.5rem;">
+        <h3 style="margin-bottom: 1rem;">その他のお問い合わせ方法</h3>
+        <ul style="list-style: none; padding: 0; space-y-4;">
+          <li style="margin-bottom: 1rem;">
+            <strong>Note：</strong>
+            <a href="https://note.com/saionji_chem" target="_blank" rel="noopener noreferrer">Noteプロフィール</a>
+            からメッセージをお送りいただけます
+          </li>
+          <li style="margin-bottom: 1rem;">
+            <strong>X（旧Twitter）：</strong>
+            <a href="https://twitter.com/saionji_chem" target="_blank" rel="noopener noreferrer">@saionji_chem</a>
+            でもお気軽にご連絡ください
+          </li>
+          <li>
+            <strong>ミセルリカ：</strong>
+            <a href="https://miserurika.com" target="_blank" rel="noopener noreferrer">ミセルリカ</a>
+            からもお問い合わせいただけます
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 西園寺聖樹. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
