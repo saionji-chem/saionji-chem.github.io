@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>西園寺聖樹 - 化学・生物講師</title>
+  <title>授業について - 西園寺聖樹</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- Navigation -->
   <nav>
     <div class="container">
@@ -21,33 +22,34 @@
         <a href="links.html">リンク</a>
         <a href="contact.html">お問い合わせ</a>
       </div>
-       <div class="hamburger" id="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
+      <button class="hamburger" id="hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero" style="margin-top: 64px; min-height: auto; padding: 3rem 0;">
+  <!-- Page Header -->
+  <div class="page-header">
     <div class="container">
-      <h1 style="margin-bottom: 0.5rem;">授業について</h1>
-      <p style="font-size: 1.125rem; color: var(--muted-foreground);">わかりやすく丁寧な授業で、目標達成をサポート</p>
+      <h1>授業について</h1>
+      <p>わかりやすく丁寧な授業で、目標達成をサポート</p>
     </div>
-  </section>
+  </div>
 
   <!-- Main Content -->
   <section class="bg-white">
-    <div class="container" style="max-width: 900px;">
-      <!-- Group Classes -->
+    <div class="container content">
+
+      <!-- 集団授業 -->
       <div class="mb-12">
         <h2>集団授業</h2>
-        <p style="margin-bottom: 1rem;">
+        <p>
           今年度は代々木ゼミナール新潟校で、標準化学の集団授業を担当しています。基本レベルから丁寧に教え、最終的には入試問題を解けるような力を養います。
         </p>
         <div class="card">
-          <h3 style="margin-bottom: 1rem;">詳細情報</h3>
+          <h3>詳細情報</h3>
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 0.75rem;"><strong>対象：</strong>高校生・高卒生</li>
             <li style="margin-bottom: 0.75rem;"><strong>科目：</strong>化学</li>
@@ -57,14 +59,14 @@
         </div>
       </div>
 
-      <!-- Individual Classes -->
+      <!-- 個別授業 -->
       <div class="mb-12">
         <h2>個別授業</h2>
-        <p style="margin-bottom: 1rem;">
+        <p>
           1対1の個別指導で、生徒の学習スタイルや目標に合わせた、カスタマイズされた授業を提供します。
         </p>
         <div class="card">
-          <h3 style="margin-bottom: 1rem;">詳細情報</h3>
+          <h3>詳細情報</h3>
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 0.75rem;"><strong>対象：</strong>中学生〜高卒生</li>
             <li style="margin-bottom: 0.75rem;"><strong>形式：</strong>1対1個別指導</li>
@@ -74,14 +76,14 @@
         </div>
       </div>
 
-      <!-- Online Classes -->
+      <!-- オンライン授業 -->
       <div class="mb-12">
         <h2>オンライン授業</h2>
-        <p style="margin-bottom: 1rem;">
+        <p>
           遠方にお住まいの方や、時間的に融通をつけたい方向けに、オンライン授業も提供しています。
         </p>
         <div class="card">
-          <h3 style="margin-bottom: 1rem;">詳細情報</h3>
+          <h3>詳細情報</h3>
           <ul style="list-style: none; padding: 0;">
             <li style="margin-bottom: 0.75rem;"><strong>対象：</strong>中学生〜高卒生</li>
             <li style="margin-bottom: 0.75rem;"><strong>形式：</strong>Zoom等を使用したオンライン指導</li>
@@ -93,11 +95,12 @@
       </div>
 
       <!-- CTA -->
-      <div style="background-color: var(--primary); color: white; padding: 2rem; border-radius: 0.5rem; text-align: center;">
-        <h3 style="color: white; margin-bottom: 1rem;">授業のお申し込み・ご相談</h3>
-        <p style="margin-bottom: 1.5rem;">ご質問やご不明な点がございましたら、お気軽にお問い合わせください。</p>
+      <div class="cta-box">
+        <h3>授業のお申し込み・ご相談</h3>
+        <p>ご質問やご不明な点がございましたら、お気軽にお問い合わせください。</p>
         <a href="contact.html" class="btn" style="background-color: white; color: var(--primary);">お問い合わせフォームへ</a>
       </div>
+
     </div>
   </section>
 

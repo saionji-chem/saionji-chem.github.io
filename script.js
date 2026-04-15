@@ -1,77 +1,81 @@
 // 西園寺聖樹 オフィシャルサイト - スクリプト
 
-document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.querySelector(".nav-links");
+document.addEventListener('DOMContentLoaded', function () {
 
-  if (hamburger) {
-    hamburger.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
+  /* --------------------------------------------------
+     ハンバーガーメニュー
+  -------------------------------------------------- */
+  const hamburger = document.getElementById('hamburger');
+  const navLinks  = document.querySelector('.nav-links');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', function () {
+      const isOpen = navLinks.classList.toggle('active');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // メニュー外クリックで閉じる
+    document.addEventListener('click', function (e) {
+      if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // メニュー内リンクをタップしたら閉じる
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
     });
   }
-});
 
-
-document.addEventListener('DOMContentLoaded', function() {
-  // スムーススクロール
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+  /* --------------------------------------------------
+     スムーススクロール（同一ページ内アンカー）
+  -------------------------------------------------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
-      if (href !== '#') {
+      if (href === '#') return;
+      const target = document.querySelector(href);
+      if (target) {
         e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
+        const navHeight = parseInt(
+          getComputedStyle(document.documentElement).getPropertyValue('--nav-height'),
+          10
+        ) || 64;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        window.scrollTo({ top: top, behavior: 'smooth' });
       }
     });
   });
 
-  // ナビゲーションのアクティブ状態を更新
-  updateActiveNav();
-  window.addEventListener('scroll', updateActiveNav);
-});
+  /* --------------------------------------------------
+     ナビゲーション アクティブ状態（index.html のみ有効）
+  -------------------------------------------------- */
+  const sections  = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
 
-function updateActiveNav() {
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    if (window.pageYOffset >= sectionTop - 200) {
-      current = section.getAttribute('id');
+  if (sections.length > 0 && navAnchors.length > 0) {
+    function updateActiveNav() {
+      const navHeight = parseInt(
+        getComputedStyle(document.documentElement).getPropertyValue('--nav-height'),
+        10
+      ) || 64;
+      let current = '';
+      sections.forEach(function (section) {
+        if (window.pageYOffset >= section.offsetTop - navHeight - 8) {
+          current = section.getAttribute('id');
+        }
+      });
+      navAnchors.forEach(function (link) {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+      });
     }
-  });
 
-  navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === '#' + current) {
-      link.classList.add('active');
-    }
-  });
-}
+    updateActiveNav();
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+  }
 
-// フォーム送信
-function handleFormSubmit(e) {
-  e.preventDefault();
-  
-  const form = e.target;
-  const formData = new FormData(form);
-  
-  // Google Formに送信する場合はここに処理を追加
-  // 例：fetch('https://docs.google.com/forms/d/...', { method: 'POST', body: formData })
-  
-  // デモ用：アラート表示
-  alert('お問い合わせありがとうございます。確認後、ご連絡させていただきます。');
-  form.reset();
-}
-
-// ページ遷移時にスクロール位置をリセット
-window.addEventListener('beforeunload', function() {
-  window.scrollTo(0, 0);
 });
