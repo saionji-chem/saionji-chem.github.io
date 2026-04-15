@@ -1,5 +1,17 @@
 // 西園寺聖樹 オフィシャルサイト - スクリプト
 
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  if (hamburger) {
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
   // スムーススクロール
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
